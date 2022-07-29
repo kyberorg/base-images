@@ -1,0 +1,9 @@
+FROM kio.ee/base/abi:edge as builder
+ADD https://github.com/kyberorg/lazy-gopher/releases/download/1.0/lazy-gopher /lazy-gopher
+RUN chown appuser:appgroup /lazy-gopher && chmod +x /lazy-gopher
+
+FROM kio.ee/base/abi:runtime as runner
+COPY --from=builder /lazy-gopher /lazy-gopher
+USER appuser
+CMD ["/lazy-gopher"]
+
