@@ -5,13 +5,15 @@ on:
     - cron: '0 6 * * *'
 
 jobs:
-  checkout:
+  prepare:
     runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Login to kio.ee
+        run: cat /srv/base-images/config | docker login --username robot+base+builder --password-stdin
   edge:
-    needs: checkout
+    needs: prepare
     runs-on: self-hosted
     steps:
       - name: Make ABI Edge Image
@@ -37,11 +39,11 @@ jobs:
     steps:
       - name: Make JDK Image
         run: zsh make-jdk-image.sh
-        working-directory: ./java/17/jdk/make-jdk-image.sh
+        working-directory: ./java/17/jdk
   jre:
     needs: runtime
     runs-on: self-hosted
     steps:
       - name: Make JRE Image
         run: zsh make-jre-image.sh
-        working-directory: ./java/17/jre/make-jre-image.sh
+        working-directory: ./java/17/jre
