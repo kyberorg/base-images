@@ -19,7 +19,8 @@ which is hardly needed for your application to run and brings additional vulnera
 
 ## Editions
 ### Edge edition
-This is standard [alpinelinux](https://alpinelinux.org) image with [edge repository](https://wiki.alpinelinux.org/...) enabled.
+This is standard [alpinelinux](https://alpinelinux.org) image 
+with [edge repository](https://wiki.alpinelinux.org/wiki/Edge) enabled.
 
 ### Runtime edition
 Contains only minimalistic linux runtime needed to run your application.
@@ -31,15 +32,15 @@ Since it has no shell, container cannot be accessed using standard approaches li
 This make runtime secure, but debug and similar stuff is no longer possible. 
 
 ## Modifications
-Despite been build from same built from the same [minirootfs](https://cz.alpinelinux...) 
-as [official alpine image](https://hub.docker.com...), 
+Despite been build from same built from the same [minirootfs](https://cz.alpinelinux.org/alpine/edge/releases/x86_64/) 
+as [official alpine image](https://hub.docker.com/_/alpine), 
 ABI contains non-root application user and group(`appuser:appgroup`). 
 So you can just add this single line to your `Dockerfile`
 ```dockerfile
 USER appuser
 ```
 
-also it contains less system users than [official alpine image](https://hub.docker.com...).
+also it contains less system users than [official alpine image](https://hub.docker.com/_/alpine).
 For example, you'd barely need to access to printing queue of your container, so `lp` user is no longer needed.
 
 ### Creating new user

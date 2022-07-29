@@ -1,6 +1,6 @@
 # Golang image
 
-This is [abi](https://github...)-based image with pre-installed and configured golang environment.
+This is [abi](../abi)-based image with pre-installed and configured golang environment.
 
 ## What is inside?
 * go
@@ -11,4 +11,4 @@ This is [abi](https://github...)-based image with pre-installed and configured g
 
 ## Versions supported
 Currently, golang `1.18.4` and above are supported. 
-For older versions please [raise an issue](https://github.com/.../issues).
+For older versions please [raise an issue](https://github.com/kyberorg/base-images/issues).
