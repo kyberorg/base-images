@@ -1,4 +1,4 @@
-name: parallel-jobs
+name: build-base-images
 on:
   push:
   schedule:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Login to kio.ee
-        run: cat /srv/base-images/config | docker login --username robot+base+builder --password-stdin
+        run: cat /srv/base-images/config | docker login --username robot+base+builder --password-stdin kio.ee
   edge:
     needs: prepare
     runs-on: self-hosted
