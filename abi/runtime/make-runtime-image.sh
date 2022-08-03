@@ -58,4 +58,4 @@ rm -rf ${RUNTIME_TAR}
 docker push ${DOCKER_REPO}:${TAG}
 
 # cleanup images
-docker rmi ${DOCKER_REPO}:${TAG}
+docker rmi -f ${DOCKER_REPO}:${TAG}
