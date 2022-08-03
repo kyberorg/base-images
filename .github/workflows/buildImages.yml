@@ -2,8 +2,7 @@ name: build-base-images
 on:
   push:
   schedule:
-    - cron: '10 13 * * *'
-    - timezone: 'Europe/Helsinki'
+    - cron: '10 10 * * *'
 
 jobs:
   prepare:
