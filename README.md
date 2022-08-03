@@ -19,3 +19,5 @@ JDK or JRE from official [eclipse-temurin](https://hub.docker.com/_/eclipse-temu
 
 ## Examples
 Some use cases.
+
+* Running simple binary [Dockerfile.gobinary](examples/Dockerfile.gobinary)
