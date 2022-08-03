@@ -47,7 +47,7 @@ cd ..
 mv ${TMP_DIR}/"${RUNTIME_TAR}" . || exit 1
 
 # Creating Docker image
-docker build -f Dockerfile -t ${DOCKER_REPO}:${TAG} . || exit 1
+docker build --no-cache -f Dockerfile -t ${DOCKER_REPO}:${TAG} . || exit 1
 
 # cleanup
 rm -rf ${TMP_DIR}
