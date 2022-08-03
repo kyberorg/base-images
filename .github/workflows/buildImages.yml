@@ -2,7 +2,7 @@ name: build-base-images
 on:
   push:
   schedule:
-    - cron: '10 10 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   prepare:
