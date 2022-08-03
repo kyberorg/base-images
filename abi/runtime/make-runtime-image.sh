@@ -57,6 +57,3 @@ rm -rf ${RUNTIME_TAR}
 
 # Ship it to kio.ee
 docker push ${DOCKER_REPO}:${TAG}
-
-# cleanup images
-docker rmi -f ${DOCKER_REPO}:${TAG}
