@@ -11,6 +11,7 @@ RUNTIME_TAR=runtime.tar.gz
 TMP_DIR=tmp
 
 # get base image
+docker rmi -f ${BASE_IMAGE} || exit 1
 docker pull ${BASE_IMAGE} || exit 1
 
 # extract layer.tar
