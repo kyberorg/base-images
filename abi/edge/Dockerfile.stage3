@@ -1,5 +1,0 @@
-# Stage 2 tar is alpine minirootfs with applied moficications
-# This Dockerfile isn't intended for direct use
-FROM scratch
-ADD stage2-x86_64.tar.gz /
-RUN apk -U update && rm -rf /var/cache/apk/*

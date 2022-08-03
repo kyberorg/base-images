@@ -1,4 +1,3 @@
-# Stage 3 tar is alpine minirootfs with applied moficications and updates
-# This Dockerfile isn't intended for direct use
-FROM scratch
-ADD stage3-x86_64.tar.gz /
+FROM kio.ee/hub/library/alpine:edge as edge
+RUN apk --no-cache upgrade
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
