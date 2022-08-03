@@ -13,7 +13,7 @@ JDK image is based on [kio.ee/base/abi:edge](../abi/README.md#Edge edition).
 ### JRE
 JRE aka Java Runtime Edition contains only JVM and tools needed to run you application.
 
-JRE image is based on [kio.ee/base/abi:runtime](../abi/README.md#Runtime edition). 
+JRE image is based on [kio.ee/base/abi:edge](../abi/README.md#Edge edition). 
 
 ## Versions supported
 Currently, only supported version is `17` from `eclipse-temurin` project. 

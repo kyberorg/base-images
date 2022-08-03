@@ -22,7 +22,7 @@ which is hardly needed for your application to run and brings additional vulnera
 This is standard [alpinelinux](https://alpinelinux.org) image 
 with [edge repository](https://wiki.alpinelinux.org/wiki/Edge) enabled.
 
-### Runtime edition
+### Runtime edition (broken)
 Contains only minimalistic linux runtime needed to run your application.
 
 Technically this is `edge` edition, but without package manager (apk) and shell (busybox). 
