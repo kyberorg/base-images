@@ -2,7 +2,7 @@ name: build-base-images
 on:
   push:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   prepare:
@@ -17,33 +17,33 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Make ABI Edge Image
-        run: zsh make-edge-image.sh
+        run: zsh -x make-edge-image.sh
         working-directory: ./abi/edge
   runtime:
     needs: edge
     runs-on: self-hosted
     steps:
       - name: Make ABI Runtime Image
-        run: zsh make-runtime-image.sh
+        run: zsh -x make-runtime-image.sh
         working-directory: ./abi/runtime
   go:
     needs: edge
     runs-on: self-hosted
     steps:
       - name: Make Go Image
-        run: zsh make-go-image.sh
-        working-directory: ./go/1.18
+        run: zsh -x make-go-image.sh
+        working-directory: ./go
   jdk:
     needs: edge
     runs-on: self-hosted
     steps:
       - name: Make JDK Image
-        run: zsh make-jdk-image.sh
+        run: zsh -x make-jdk-image.sh
         working-directory: ./java/17/jdk
   jre:
     needs: runtime
     runs-on: self-hosted
     steps:
       - name: Make JRE Image
-        run: zsh make-jre-image.sh
+        run: zsh -x make-jre-image.sh
         working-directory: ./java/17/jre

@@ -1,6 +1,6 @@
 FROM kio.ee/base/abi:edge as base
 
-RUN apk add --no-cache git make musl-dev go=1.18.4-r2 upx
+RUN apk add --no-cache git make musl-dev go upx
 
 # Configure Go
 ENV GOROOT /usr/lib/go
