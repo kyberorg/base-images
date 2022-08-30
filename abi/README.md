@@ -52,3 +52,21 @@ FROM kio.ee/base/abi:runtime as final
 COPY --from=build /etc/passwd /etc/passwd
 COPY --from=build /etc/group /etc/group
 ```
+
+### IP Forwarding disabled
+By default, IP Forwarding in ABI is disabled. Normally, container is end user system, and it has single network. 
+
+Also, this modification attempts to fix [CVE-1999-0511](https://github.com/alpinelinux/docker-alpine/issues/278).
+
+Forwarding can be easily enabled by running
+```dockerfile
+RUN echo "net.ipv4.ip_forward=1" > /etc/sysctl.conf
+```
+
+### Custom Repo
+ABI uses `alpine.kyberorg.fi` mirror instead of default one. This is fast mirror from Suomi/Finland.
+
+To revert to default repo please use:
+```dockerfile
+RUN sed -i 's/alpine.kyberorg.fi/dl-cdn.alpinelinux.org\/alpine/g' /etc/apk/repositories
+```
