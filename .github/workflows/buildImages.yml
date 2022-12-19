@@ -43,7 +43,7 @@ jobs:
         run: zsh -x make-jdk-image.sh
         working-directory: ./java/17/jdk
   jre:
-    needs: runtime
+    needs: edge
     runs-on: self-hosted
     steps:
       - name: Make JRE Image
