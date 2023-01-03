@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Login to kio.ee
-        run: cat /srv/base-images/config | docker login --username robot+base+builder --password-stdin kio.ee
+        run:  cat ${{ secrets.KIO_TOKEN_FILE }} | docker login --username robot+base+builder --password-stdin kio.ee
       - name: Make build clean
         run: docker system prune --all -f
   edge:
